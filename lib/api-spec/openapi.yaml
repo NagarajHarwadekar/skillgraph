@@ -1,0 +1,297 @@
+openapi: 3.1.0
+info:
+  # Do not change the title, if the title changes, the import paths will be broken
+  title: Api
+  version: 0.1.0
+  description: API specification
+servers:
+  - url: /api
+    description: Base API path
+tags:
+  - name: health
+    description: Health operations
+  - name: skillgraph
+    description: SkillGraph AI career intelligence operations
+paths:
+  /healthz:
+    get:
+      operationId: healthCheck
+      tags: [health]
+      summary: Health check
+      description: Returns server health status
+      responses:
+        "200":
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthStatus"
+  /skillgraph/analyze:
+    post:
+      operationId: analyzeSkillGraph
+      tags: [skillgraph]
+      summary: Analyze a profile against a target career
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SkillGraphAnalysisInput"
+      responses:
+        "200":
+          description: Structured career analysis
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SkillGraphAnalysis"
+        "400":
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiError"
+        "502":
+          description: AI provider unavailable
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiError"
+  /skillgraph/job-analyze:
+    post:
+      operationId: analyzeJobDescription
+      tags: [skillgraph]
+      summary: Analyze a job description against a skill profile
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/JobAnalysisInput"
+      responses:
+        "200":
+          description: Structured job description analysis
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JobAnalysis"
+        "400":
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiError"
+        "502":
+          description: AI provider unavailable
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiError"
+components:
+  schemas:
+    HealthStatus:
+      type: object
+      properties:
+        status:
+          type: string
+      required:
+        - status
+    ApiError:
+      type: object
+      properties:
+        error:
+          type: string
+      required:
+        - error
+    SkillLevel:
+      type: object
+      properties:
+        name:
+          type: string
+        level:
+          type: string
+        score:
+          type: integer
+        status:
+          type: string
+      required:
+        - name
+        - level
+        - score
+        - status
+    SkillGraphAnalysisInput:
+      type: object
+      properties:
+        career:
+          type: string
+          minLength: 1
+        skills:
+          type: array
+          items:
+            $ref: "#/components/schemas/SkillLevel"
+      required:
+        - career
+        - skills
+    RoadmapItem:
+      type: object
+      properties:
+        week:
+          type: integer
+        topic:
+          type: string
+        why:
+          type: string
+        skills:
+          type: array
+          items:
+            type: string
+        activity:
+          type: string
+        effort:
+          type: string
+      required:
+        - week
+        - topic
+        - why
+        - skills
+        - activity
+        - effort
+    ProjectRecommendation:
+      type: object
+      properties:
+        title:
+          type: string
+        difficulty:
+          type: string
+        description:
+          type: string
+        skills:
+          type: array
+          items:
+            type: string
+        why:
+          type: string
+        stack:
+          type: array
+          items:
+            type: string
+        outcome:
+          type: string
+      required:
+        - title
+        - difficulty
+        - description
+        - skills
+        - why
+        - stack
+        - outcome
+    SkillGraphAnalysis:
+      type: object
+      properties:
+        readiness:
+          type: integer
+        strongSkills:
+          type: array
+          items:
+            type: string
+        developingSkills:
+          type: array
+          items:
+            type: string
+        priorityGaps:
+          type: array
+          items:
+            type: string
+        whyGapsMatter:
+          type: string
+        recommendedFocus:
+          type: string
+        nextActions:
+          type: array
+          items:
+            type: string
+        roadmap:
+          type: array
+          items:
+            $ref: "#/components/schemas/RoadmapItem"
+        projects:
+          type: array
+          items:
+            $ref: "#/components/schemas/ProjectRecommendation"
+      required:
+        - readiness
+        - strongSkills
+        - developingSkills
+        - priorityGaps
+        - whyGapsMatter
+        - recommendedFocus
+        - nextActions
+        - roadmap
+        - projects
+    JobAnalysisInput:
+      type: object
+      properties:
+        career:
+          type: string
+          minLength: 1
+        skills:
+          type: array
+          items:
+            $ref: "#/components/schemas/SkillLevel"
+        jobDescription:
+          type: string
+          minLength: 50
+      required:
+        - career
+        - skills
+        - jobDescription
+    JobAnalysis:
+      type: object
+      properties:
+        role:
+          type: string
+        requiredSkills:
+          type: array
+          items:
+            type: string
+        preferredSkills:
+          type: array
+          items:
+            type: string
+        technologies:
+          type: array
+          items:
+            type: string
+        experienceExpectations:
+          type: string
+        keywords:
+          type: array
+          items:
+            type: string
+        covered:
+          type: array
+          items:
+            type: string
+        partiallyCovered:
+          type: array
+          items:
+            type: string
+        missing:
+          type: array
+          items:
+            type: string
+        recommendedActions:
+          type: array
+          items:
+            type: string
+      required:
+        - role
+        - requiredSkills
+        - preferredSkills
+        - technologies
+        - experienceExpectations
+        - keywords
+        - covered
+        - partiallyCovered
+        - missing
+        - recommendedActions
+

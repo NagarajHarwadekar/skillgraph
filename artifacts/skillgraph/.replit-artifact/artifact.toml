@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "SkillGraph"
+description = "An AI-powered career intelligence platform that maps current skills to target careers, identifies gaps, and builds a personalized learning and project roadmap."
+version = "1.0.0"
+id = "artifacts/skillgraph"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24643
+
+[services.development]
+run = "pnpm --filter @workspace/skillgraph run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/skillgraph", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/skillgraph/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24643"
+BASE_PATH = "/"

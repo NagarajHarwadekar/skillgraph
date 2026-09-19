@@ -1,0 +1,1140 @@
+Build a complete, polished, professional, hackathon-ready web application called:
+
+# SKILLGRAPH
+
+Tagline:
+**Map your skills. Build your future.**
+
+This is a serious AI-powered career intelligence platform, not a simple landing-page demo.
+
+The application should help a user understand their current skills, compare them with the skills needed for a target career, identify skill gaps, visualize those gaps, generate a personalized learning roadmap, recommend projects, and analyze real job descriptions against their profile.
+
+==================================================
+IMPORTANT HACKATHON CONTEXT
+===========================
+
+This project is being built for a 24-hour open innovation hackathon.
+
+The application must therefore prioritize:
+
+* Working functionality
+* Strong UI/UX
+* Professional presentation
+* Real AI functionality
+* Clear problem solving
+* Real-world usefulness
+* Scalability-minded architecture
+* Mobile responsiveness
+* Reliability
+* Security
+
+Do not build a huge number of unfinished features.
+
+Build a smaller number of features extremely well.
+
+The core experience must work from beginning to end.
+
+==================================================
+DEVELOPER / CREATOR INFORMATION
+===============================
+
+Include a professional About / Creator section in the website.
+
+Display:
+
+**Developed by Nagaraj Harwadekar**
+
+and:
+
+**CSE Student**
+
+Also include a short professional statement such as:
+
+"Built by Nagaraj Harwadekar, a Computer Science and Engineering student passionate about building practical technology solutions with AI and modern web technologies."
+
+Do not exaggerate qualifications.
+
+Do not invent internships, companies, awards, jobs, clients, or achievements for Nagaraj.
+
+The creator section should look professional and natural rather than like a student signature pasted into the footer.
+
+Also include:
+
+"Built for HackDevengers 2.0"
+
+in an appropriate location such as the footer or About section.
+
+==================================================
+TECHNOLOGY REQUIREMENTS
+=======================
+
+Use a modern production-quality web architecture appropriate for Google AI Studio Build.
+
+Prefer:
+
+* React
+* TypeScript where appropriate
+* Modern component architecture
+* Modern CSS / Tailwind if useful
+* Node.js server-side functionality for secure AI calls
+* Gemini API
+
+Do NOT use Firebase.
+
+Do NOT add Firebase Authentication.
+
+Do NOT add Supabase.
+
+Do NOT require a database for the initial MVP.
+
+Use browser localStorage for lightweight user progress and demo persistence where appropriate.
+
+Do not add unnecessary dependencies.
+
+Keep the architecture clean and maintainable.
+
+==================================================
+CRITICAL API SECURITY REQUIREMENT
+=================================
+
+The Gemini API key MUST NEVER be exposed to the browser.
+
+Never place:
+
+GEMINI_API_KEY
+
+inside:
+
+* React client code
+* browser JavaScript
+* HTML
+* public files
+* GitHub source files
+* README
+* visible configuration
+* hardcoded strings
+* URLs
+* frontend environment variables
+
+Use Google AI Studio's secure server-side Secrets functionality.
+
+Use the Gemini API only through server-side functionality.
+
+The client should communicate with our server-side AI endpoint.
+
+Never expose the raw API key in responses, logs, errors, UI, or source code.
+
+If an environment variable is required, use:
+
+GEMINI_API_KEY
+
+only on the server side.
+
+Make sure the generated project follows Google AI Studio's recommended server-side secret approach.
+
+==================================================
+NO PAID SERVICES
+================
+
+The project should be designed to work using free/available resources.
+
+Do not require:
+
+* paid databases
+* paid APIs
+* paid authentication
+* paid hosting
+* paid analytics
+* paid AI services
+
+Use Gemini through the available Google AI Studio/Gemini API configuration.
+
+Do not enable or require billing simply to make the application work.
+
+==================================================
+PRODUCT VISION
+==============
+
+SkillGraph should feel like a combination of:
+
+* career intelligence platform
+* skill assessment tool
+* AI career advisor
+* visual skill mapping system
+* personalized learning planner
+* project recommendation engine
+* job description analyzer
+
+The product should answer:
+
+"What do I know now?"
+
+"What does my target career require?"
+
+"What am I missing?"
+
+"What should I learn next?"
+
+"What should I build?"
+
+"How well does my current profile match a real job description?"
+
+==================================================
+PRIMARY USER FLOW
+=================
+
+Landing Page
+↓
+Choose Career
+↓
+Assess Skills
+↓
+AI Career Gap Analysis
+↓
+Interactive SkillGraph
+↓
+Personalized Roadmap
+↓
+Project Recommendations
+↓
+Job Description Analyzer
+↓
+Career Dashboard
+
+The complete flow must feel connected.
+
+User information should carry through the application.
+
+Do not make each page feel like a separate unrelated demo.
+
+==================================================
+
+1. LANDING PAGE
+   ==================================================
+
+Create a premium, visually impressive landing page.
+
+Header:
+
+* SkillGraph logo
+* Home
+* How It Works
+* Features
+* About
+* Primary CTA
+
+Hero:
+
+Headline:
+
+**Turn your current skills into your future career.**
+
+Supporting text:
+
+"SkillGraph uses AI to map your skills against a target career, uncover the gaps that matter, and turn them into a practical learning and project roadmap."
+
+Primary button:
+
+**Build My SkillGraph**
+
+Secondary button:
+
+**See How It Works**
+
+Hero visual:
+
+Create an interactive visual representation of connected skill nodes.
+
+Example:
+
+Career
+↓
+Skills
+↓
+Subskills
+↓
+Projects
+↓
+Career Readiness
+
+Add subtle animations.
+
+Do not overdo animations.
+
+Below hero:
+
+* Feature cards
+* How it works
+* Example SkillGraph
+* AI analysis preview
+* Roadmap preview
+* Job analyzer preview
+* Creator/About section
+* Footer
+
+==================================================
+2. CAREER SELECTION
+===================
+
+Create a beautiful career-selection interface.
+
+Include:
+
+* Data Analyst
+* Software Engineer
+* AI/ML Engineer
+* Cybersecurity Analyst
+* Cloud Engineer
+* UI/UX Designer
+
+Also include:
+
+**Custom Career**
+
+Each career card should contain:
+
+* Icon
+* Career name
+* Short description
+* Example skills
+* Select button
+
+Allow the user to select one career.
+
+The selected career must be stored in application state.
+
+==================================================
+3. SKILL ASSESSMENT
+===================
+
+Create a professional assessment interface.
+
+For example, when the user chooses Data Analyst, show skills such as:
+
+* Python
+* SQL
+* Excel
+* Statistics
+* Power BI
+* Data Visualization
+* Data Cleaning
+* Pandas
+* Communication
+
+For other careers, dynamically use relevant skills.
+
+Allow proficiency levels:
+
+* Beginner
+* Developing
+* Intermediate
+* Advanced
+
+Use attractive controls such as:
+
+* segmented selectors
+* sliders where appropriate
+* cards
+* progress indicators
+
+Show:
+
+* current progress
+* number of skills assessed
+* completion percentage
+
+Allow:
+
+* Back
+* Continue
+
+Do not require login.
+
+==================================================
+4. AI CAREER GAP ANALYSIS
+=========================
+
+This is one of the most important features.
+
+After assessment, send the career and skill information to Gemini through a secure server-side endpoint.
+
+Ask Gemini to produce structured JSON.
+
+The response should include:
+
+* readiness estimate
+* strong skills
+* developing skills
+* priority gaps
+* explanations
+* recommended focus
+* suggested next actions
+
+Display:
+
+## Your SkillGraph Analysis
+
+AI Readiness Estimate
+
+Show the percentage visually.
+
+IMPORTANT:
+
+This percentage is only an AI-generated estimate based on the user's self-assessment.
+
+Do NOT present it as scientifically validated.
+
+Clearly label it as:
+
+"AI-generated readiness estimate"
+
+Display:
+
+### Strong Skills
+
+### Developing Skills
+
+### Priority Gaps
+
+### Why These Gaps Matter
+
+### Recommended Next Focus
+
+Create excellent visual cards.
+
+==================================================
+5. INTERACTIVE SKILLGRAPH
+=========================
+
+This is the signature feature.
+
+Create an interactive visual graph/network.
+
+Example:
+
+DATA ANALYST
+
+├── SQL
+│   ├── SELECT
+│   ├── JOIN
+│   ├── GROUP BY
+│   └── CTEs
+│
+├── PYTHON
+│   ├── Pandas
+│   ├── NumPy
+│   └── Data Cleaning
+│
+├── STATISTICS
+│
+├── DATA VISUALIZATION
+│
+├── POWER BI
+│
+└── PROJECTS
+
+Use node states:
+
+GREEN/STRONG
+BLUE/DEVELOPING
+GRAY/MISSING
+
+Keep the actual color palette consistent with the overall design.
+
+Nodes should be connected visually.
+
+The graph should support:
+
+* zooming where practical
+* panning where practical
+* clicking nodes
+* highlighting relationships
+* displaying node details
+
+When a user clicks a node, display:
+
+* Skill name
+* Current level
+* Skill status
+* Why it matters
+* Recommended action
+* Related skills
+
+Make this responsive on mobile.
+
+Do not create a graph that becomes unusable on a phone.
+
+==================================================
+6. PERSONALIZED ROADMAP
+=======================
+
+Generate a personalized learning roadmap using:
+
+* target career
+* current skills
+* proficiency levels
+* skill gaps
+* priority gaps
+
+Create a realistic sequence.
+
+Example:
+
+WEEK 1
+SQL Fundamentals
+
+WEEK 2
+Advanced SQL
+
+WEEK 3
+Statistics
+
+WEEK 4
+Power BI
+
+WEEK 5
+Real-world Data Project
+
+WEEK 6
+Portfolio + Interview Preparation
+
+The exact roadmap should be AI-generated according to the user's profile.
+
+Each roadmap item should show:
+
+* Week
+* Topic
+* Why it matters
+* Skills covered
+* Suggested activity
+* Estimated effort
+* Status
+
+Allow:
+
+* Mark complete
+* Mark incomplete
+
+Persist roadmap progress in localStorage.
+
+==================================================
+7. PROJECT RECOMMENDATION ENGINE
+================================
+
+Create an AI-powered project recommendation section.
+
+Projects should be based on:
+
+* target career
+* existing skills
+* skill gaps
+* roadmap
+* proficiency level
+
+Each project should display:
+
+* Project title
+* Difficulty
+* Description
+* Skills practiced
+* Why it was recommended
+* Suggested stack
+* Expected outcome
+
+Example:
+
+"E-commerce Sales Intelligence Dashboard"
+
+Skills:
+
+* SQL
+* Python
+* Pandas
+* Power BI
+* Statistics
+
+Allow:
+
+**Add to Roadmap**
+
+When selected, store it in the user's roadmap.
+
+==================================================
+8. JOB DESCRIPTION ANALYZER
+===========================
+
+Create a professional Job Description Analyzer.
+
+Allow users to paste a real job description.
+
+Provide:
+
+* large text area
+* character guidance
+* Analyze button
+* loading state
+
+Send the job description and the user's SkillGraph profile to Gemini securely.
+
+Extract:
+
+### Required Skills
+
+### Preferred Skills
+
+### Technologies
+
+### Experience Expectations
+
+### Important Keywords
+
+Then compare against the user's current skills.
+
+Display:
+
+### Covered
+
+### Partially Covered
+
+### Missing
+
+### Recommended Actions
+
+Use visual indicators.
+
+Do NOT claim:
+
+* guaranteed employment
+* guaranteed ATS score
+* guaranteed interview
+* guaranteed job matching
+
+The feature should be presented as career guidance.
+
+==================================================
+9. CAREER DASHBOARD
+===================
+
+Create a polished dashboard.
+
+Show:
+
+* Target Career
+* AI Readiness Estimate
+* Skills Assessed
+* Strong Skills
+* Priority Gaps
+* Current Roadmap Focus
+* Recommended Projects
+* SkillGraph preview
+* Job Analyzer shortcut
+
+Create meaningful charts/cards where useful.
+
+Avoid unnecessary charts.
+
+The dashboard should feel like the user's personal career command center.
+
+==================================================
+10. DEMO MODE
+=============
+
+Create an easy sample/demo profile.
+
+Allow:
+
+**Load Demo Profile**
+
+Demo profile:
+
+Career:
+Data Analyst
+
+Python:
+Intermediate
+
+SQL:
+Beginner
+
+Excel:
+Intermediate
+
+Statistics:
+Beginner
+
+Power BI:
+Beginner
+
+Data Visualization:
+Developing
+
+Pandas:
+Developing
+
+Communication:
+Intermediate
+
+When the user selects the demo profile, populate the application.
+
+This makes the hackathon demonstration fast.
+
+Clearly label it as demo/sample data.
+
+==================================================
+11. DATA PERSISTENCE
+====================
+
+Do not use a database.
+
+Use localStorage for:
+
+* selected career
+* assessment
+* roadmap progress
+* selected projects
+* dashboard state
+
+Handle corrupted/missing localStorage gracefully.
+
+Provide a Reset / Start Over option.
+
+==================================================
+12. ERROR HANDLING
+==================
+
+This is extremely important.
+
+Handle:
+
+* Gemini API errors
+* network failures
+* empty inputs
+* malformed AI responses
+* invalid JSON
+* rate limits
+* missing environment variables
+* loading failures
+* unexpected exceptions
+
+Never show raw server errors or API keys to users.
+
+Create friendly messages such as:
+
+"AI analysis is temporarily unavailable. Please try again."
+
+If Gemini is unavailable, provide a clearly labeled fallback/demo analysis so the UI does not completely break.
+
+Never pretend a fallback result is live AI.
+
+==================================================
+13. AI RESPONSE RELIABILITY
+===========================
+
+For Gemini responses:
+
+* Request structured JSON
+* Validate responses
+* Handle missing fields
+* Provide defaults where safe
+* Prevent malformed AI output from crashing the interface
+
+Do not directly render arbitrary AI-generated HTML.
+
+Render structured data safely.
+
+==================================================
+14. UI/UX DESIGN
+================
+
+The website must look like a polished modern SaaS product.
+
+Design direction:
+
+Dark-first.
+
+Primary background:
+deep navy / charcoal.
+
+Accent direction:
+
+* violet
+* indigo
+* subtle cyan
+
+Typography:
+
+* modern
+* clean
+* highly readable
+
+Use:
+
+* glass effects carefully
+* subtle gradients
+* soft borders
+* premium cards
+* modern buttons
+* tasteful shadows
+* smooth micro-interactions
+
+Do NOT create:
+
+* excessive glassmorphism
+* excessive glowing effects
+* excessive gradients
+* excessive animations
+* clutter
+* tiny unreadable text
+* generic template-looking sections
+
+Create strong visual hierarchy.
+
+Make the application feel coherent from the landing page through the dashboard.
+
+==================================================
+15. RESPONSIVE / MOBILE-FIRST
+=============================
+
+This is mandatory.
+
+The application must work properly on:
+
+* Android phones
+* iPhones
+* tablets
+* laptops
+* desktop monitors
+
+No horizontal scrolling.
+
+No broken layouts.
+
+No overflowing graphs.
+
+No inaccessible buttons.
+
+No text going outside cards.
+
+No desktop-only navigation.
+
+Use:
+
+* responsive grids
+* mobile navigation
+* collapsible sections
+* responsive SkillGraph
+* touch-friendly controls
+
+Prioritize mobile usability.
+
+==================================================
+16. ACCESSIBILITY
+=================
+
+Implement good accessibility practices:
+
+* semantic HTML
+* proper labels
+* keyboard navigation
+* visible focus states
+* appropriate contrast
+* accessible buttons
+* meaningful aria labels where needed
+
+Do not rely on color alone to communicate status.
+
+==================================================
+17. SEO
+=======
+
+Implement proper SEO.
+
+Website title:
+
+**SkillGraph — Map Your Skills. Build Your Future.**
+
+Meta description:
+
+**SkillGraph uses AI to analyze your skills, identify career gaps, build personalized learning roadmaps, recommend projects, and compare your profile with job descriptions.**
+
+Include:
+
+* title
+* meta description
+* Open Graph metadata
+* social sharing metadata
+* favicon
+* semantic headings
+* robots.txt
+* sitemap where appropriate
+* canonical metadata where appropriate
+
+Do not keyword-stuff.
+
+==================================================
+18. ABOUT / CREATOR
+===================
+
+Create a professional About section.
+
+Title:
+
+**Built by Nagaraj Harwadekar**
+
+Display:
+
+**CSE Student**
+
+Description:
+
+"SkillGraph was developed by Nagaraj Harwadekar, a Computer Science and Engineering student interested in AI, software development, and building practical technology solutions."
+
+Include:
+
+**HackDevengers 2.0 — 2026**
+
+Do not invent any additional personal achievements.
+
+==================================================
+19. FOOTER
+==========
+
+Footer should contain:
+
+SkillGraph
+
+Map your skills. Build your future.
+
+Navigation links.
+
+About creator.
+
+"Developed by Nagaraj Harwadekar"
+
+"CSE Student"
+
+"Built for HackDevengers 2.0"
+
+Current year 2026.
+
+==================================================
+20. SECURITY
+============
+
+Audit the application for security.
+
+Never expose:
+
+* Gemini API key
+* secrets
+* tokens
+* passwords
+
+Do not put secrets in:
+
+* GitHub
+* client bundle
+* public folder
+* source code
+* README
+* screenshots
+
+Use server-side environment variables/secrets.
+
+Do not log sensitive information.
+
+Do not store unnecessary personal data.
+
+==================================================
+21. PERFORMANCE
+===============
+
+Optimize the application.
+
+Avoid unnecessary re-renders.
+
+Avoid huge assets.
+
+Use lazy loading where appropriate.
+
+Keep dependencies reasonable.
+
+Make initial loading fast.
+
+Use loading skeletons where appropriate.
+
+==================================================
+22. PROFESSIONAL DETAILS
+========================
+
+Add:
+
+* polished empty states
+* polished loading states
+* skeleton loaders
+* hover states
+* button feedback
+* success notifications
+* error notifications
+* confirmation for reset
+* smooth page transitions
+
+Avoid fake functionality.
+
+Every important button should perform a real action.
+
+==================================================
+23. NAVIGATION
+==============
+
+Create navigation for:
+
+Home
+Assessment
+SkillGraph
+Roadmap
+Projects
+Job Analyzer
+Dashboard
+About
+
+Make navigation responsive.
+
+Use a mobile menu or bottom navigation where appropriate.
+
+==================================================
+24. PRODUCT COHERENCE
+=====================
+
+All pages must use the same:
+
+* design system
+* typography
+* spacing
+* button style
+* card style
+* color system
+* navigation
+* interaction patterns
+
+Do not make individual pages look like separate applications.
+
+==================================================
+25. FINAL QUALITY AUDIT
+=======================
+
+Before considering the project complete, automatically audit the entire application.
+
+Check:
+
+BUILD
+
+* no build errors
+* no TypeScript errors
+* no broken imports
+* no missing packages
+
+FUNCTIONALITY
+
+* landing works
+* career selection works
+* assessment works
+* AI analysis works
+* SkillGraph works
+* roadmap works
+* projects work
+* job analyzer works
+* dashboard works
+* navigation works
+
+AI
+
+* Gemini calls are server-side
+* API key is not client-exposed
+* responses are validated
+* failures are handled
+
+SECURITY
+
+* no secrets in source
+* no secrets in public files
+* no secrets in GitHub-ready code
+
+RESPONSIVENESS
+
+* mobile works
+* tablet works
+* desktop works
+* no horizontal scrolling
+
+UX
+
+* loading states
+* empty states
+* errors
+* success states
+* reset functionality
+
+SEO
+
+* title
+* description
+* metadata
+* favicon
+* robots
+* sitemap where appropriate
+
+==================================================
+26. IMPORTANT SCOPE RULE
+========================
+
+Do not keep adding unnecessary features.
+
+The most important working features are:
+
+1. Landing Page
+2. Career Selection
+3. Skill Assessment
+4. AI Gap Analysis
+5. Interactive SkillGraph
+6. Personalized Roadmap
+7. Project Recommendations
+8. Job Description Analyzer
+9. Dashboard
+
+Make these features excellent.
+
+If a feature threatens reliability, prioritize the core flow instead of adding more features.
+
+==================================================
+27. FINAL RESULT
+================
+
+The final application should feel like a real product that could be shown to:
+
+* hackathon judges
+* students
+* recruiters
+* developers
+* career learners
+
+It should NOT look like:
+
+* a basic college mini-project
+* a static HTML page
+* a generic AI dashboard
+* a collection of disconnected screens
+
+It should look polished, modern, coherent, functional, secure, responsive, and professionally designed.
+
+IMPORTANT:
+
+After generating the application, inspect the generated project yourself.
+
+Fix obvious build/runtime issues before considering the first build complete.
+
+Do not expose secrets.
+
+Do not remove functionality simply to make the code shorter.
+
+Build the complete SkillGraph application now.
